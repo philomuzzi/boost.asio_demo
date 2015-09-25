@@ -19,7 +19,7 @@ ip::tcp::endpoint ep(ip::address::from_string("127.0.0.1"), 8001);
 
 void sync_echo(std::string msg) {
 	msg += "\n";	
-	int head = (1 << 16) | msg.size() & 0x0000ffff;
+	int head = (10000 << 16) | msg.size() & 0x0000ffff;
 	std::array<char, sizeof(int)> arrHead;
 	memcpy(arrHead.data(), &head, sizeof(head));
 	std::string strHead(arrHead.data(), sizeof(int));
