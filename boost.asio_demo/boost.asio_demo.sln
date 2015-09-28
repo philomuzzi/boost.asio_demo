@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Timer_Demo", "Timer_Demo\Ti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Time_demo1", "Time_demo1\Time_demo1.vcxproj", "{1E4DED99-E677-4671-9D88-AA53416E243C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Timer_Try_Demo", "Timer_Try_Demo\Timer_Try_Demo.vcxproj", "{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{1E4DED99-E677-4671-9D88-AA53416E243C}.Release|x64.Build.0 = Release|x64
 		{1E4DED99-E677-4671-9D88-AA53416E243C}.Release|x86.ActiveCfg = Release|Win32
 		{1E4DED99-E677-4671-9D88-AA53416E243C}.Release|x86.Build.0 = Release|Win32
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Debug|x64.ActiveCfg = Debug|x64
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Debug|x64.Build.0 = Debug|x64
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Debug|x86.ActiveCfg = Debug|Win32
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Debug|x86.Build.0 = Debug|Win32
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Release|x64.ActiveCfg = Release|x64
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Release|x64.Build.0 = Release|x64
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Release|x86.ActiveCfg = Release|Win32
+		{9B3675E9-D7D9-43E9-AA2D-B3FE41631219}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
