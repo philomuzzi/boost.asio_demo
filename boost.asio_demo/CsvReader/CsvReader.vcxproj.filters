@@ -21,9 +21,15 @@
     <ClCompile Include="CsvReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TableManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CsvReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TableManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

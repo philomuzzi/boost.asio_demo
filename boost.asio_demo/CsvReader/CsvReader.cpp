@@ -24,15 +24,16 @@ void CsvReader::readLine(string s, vector<string>& header) {
 }
 
 int CsvReader::getItemDataInt(int lineID, std::string name) {
+	boost::to_lower(name);
 	auto p = m_header_map.find(name);
 	if (p == m_header_map.end()) {
-		cout << "列名错误: " << name;
+		cout << "列名错误: " << name << endl;
 		return (unsigned int)-1;
 	}
 
 	auto p2 = m_body_map.find(lineID);
 	if (p2 == m_body_map.end()) {
-		cout << "行号错误: " << lineID;
+		cout << "行号错误: " << lineID << endl;
 		return (unsigned int)-1;
 	}
 
@@ -40,15 +41,16 @@ int CsvReader::getItemDataInt(int lineID, std::string name) {
 }
 
 std::string CsvReader::getItemDataString(int lineID, std::string name) {
+	boost::to_lower(name);
 	auto p = m_header_map.find(name);
 	if (p == m_header_map.end()) {
-		cout << "列名错误: " << name;
+		cout << "列名错误: " << name << endl;
 		return "";
 	}
 
 	auto p2 = m_body_map.find(lineID);
 	if (p2 == m_body_map.end()) {
-		cout << "行号错误: " << lineID;
+		cout << "行号错误: " << lineID << endl;
 		return "";
 	}
 
@@ -65,12 +67,13 @@ void CsvReader::init(const std::string filename) {
 	vector<string> header;
 	if (getline(is, line)) {
 		readLine(line, header);
-		cout << line << endl;
 	}
 
-	map<string, int> m_head_map;
+	for (auto i : header)
+		cout << i << endl;
+
 	for (size_t i = 0; i < header.size(); ++i) {
-		auto a = m_head_map.insert({ header[i], i });
+		auto a = m_header_map.insert({ header[i], i });
 		if (!a.second) {
 			cout << "表格" << filename << "有相同的表头ID: " << header[i] << endl;
 		}
@@ -79,7 +82,6 @@ void CsvReader::init(const std::string filename) {
 	// 丢弃中文说明行
 	getline(is, line);
 
-	map<int, vector<string>> m_body_map;
 	while (getline(is, line)) {
 		vector<string> body;
 		readLine(line, body);

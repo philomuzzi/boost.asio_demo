@@ -2,8 +2,9 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <memory>
 
-class CsvReader {
+class CsvReader : public std::enable_shared_from_this<CsvReader> {
 public:
 	CsvReader();
 	~CsvReader();

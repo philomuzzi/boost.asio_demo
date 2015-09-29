@@ -122,9 +122,11 @@
   <ItemGroup>
     <ClCompile Include="CsvReader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TableManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CsvReader.h" />
+    <ClInclude Include="TableManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
