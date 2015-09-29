@@ -10,6 +10,9 @@ public:
 
 	void init(const std::string filename);
 
+	int getItemDataInt(int lineID, std::string name);
+	std::string getItemDataString(int lineID, std::string name);
+
 private:
 	void readLine(std::string s, std::vector<std::string>& header);
 

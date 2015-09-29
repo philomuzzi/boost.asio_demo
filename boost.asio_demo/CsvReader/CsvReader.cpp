@@ -10,7 +10,6 @@ CsvReader::CsvReader()
 {
 }
 
-
 CsvReader::~CsvReader()
 {
 }
@@ -22,6 +21,38 @@ void CsvReader::readLine(string s, vector<string>& header) {
 		boost::trim(header[i]);
 		boost::to_lower(header[i]);
 	}
+}
+
+int CsvReader::getItemDataInt(int lineID, std::string name) {
+	auto p = m_header_map.find(name);
+	if (p == m_header_map.end()) {
+		cout << "ÁÐÃû´íÎó: " << name;
+		return (unsigned int)-1;
+	}
+
+	auto p2 = m_body_map.find(lineID);
+	if (p2 == m_body_map.end()) {
+		cout << "ÐÐºÅ´íÎó: " << lineID;
+		return (unsigned int)-1;
+	}
+
+	return boost::lexical_cast<int>(p2->second.at(p->second));
+}
+
+std::string CsvReader::getItemDataString(int lineID, std::string name) {
+	auto p = m_header_map.find(name);
+	if (p == m_header_map.end()) {
+		cout << "ÁÐÃû´íÎó: " << name;
+		return "";
+	}
+
+	auto p2 = m_body_map.find(lineID);
+	if (p2 == m_body_map.end()) {
+		cout << "ÐÐºÅ´íÎó: " << lineID;
+		return "";
+	}
+
+	return p2->second.at(p->second);
 }
 
 void CsvReader::init(const std::string filename) {
